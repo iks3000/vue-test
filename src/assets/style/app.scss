@@ -1,0 +1,223 @@
+$main-color-green: #3db565;
+$color-text-dark: #333333;
+$color-text-white: #ffffff;
+$title-font-size: 34px;
+
+@mixin grid() {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@mixin phone() {
+  text-decoration: none;
+  color: $main-color-green;
+}
+
+#app {
+  display: block;
+  font-family: 'Arial', sans-serif;
+}
+
+// ---- Contacts ----
+.contacts-block {
+  background: #fff;
+  color: $color-text-dark;
+  padding: 0 60px 100px;
+
+  &__title {
+    font-size: 50px;
+    margin: 60px 0 50px 0;
+  }
+
+  &__wrapper {
+    @include grid();
+    grid-gap: 47px;
+  }
+
+  .block {
+    &__wrapper {
+      @include grid();
+    }
+
+    &__title {
+      font-size: $title-font-size;
+      padding: 0 0 50px;
+      &_color {
+        color: $main-color-green;
+      }
+    }
+
+    &__text-1 {
+      font-size: 15px;
+      line-height: 30px;
+    }
+
+    &__phone {
+      color: $main-color-green;
+      font-size: 26px;
+      padding: 40px 0 0;
+      text-decoration: none;
+    }
+
+    &__phone > a {
+      @include phone();
+    }
+
+    &__info-contacts-name {
+      font-size: 15px;
+      line-height: 30px;
+    }
+
+    &__info-contacts-definition {
+      color: $main-color-green;
+      font-size: 16px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 9px 0;
+      font-weight: 600;
+    }
+
+    &__info-contacts-definition > a {
+      @include phone();
+    }
+  }
+}
+
+
+// ---- OurOffice ----
+.our-office-block {
+  background: #232323;
+  padding: 0 60px;
+  height: 500px;
+  box-sizing: border-box;
+  &__wrapper {
+    @include grid();
+  }
+
+  &__title {
+    color: $color-text-white;
+    font-size: $title-font-size;
+    padding: 100px 0 0;
+  }
+
+  &__tabs {
+    font-size: 11px;
+    display: inline-block;
+    padding: 50px 20px 50px 0;
+    color: $color-text-white;
+    cursor: pointer;
+    transition:0.2s;
+    text-transform: uppercase;
+  }
+  .is-active{
+    color: $main-color-green;
+  }
+
+  .tab-panel {
+    color: $color-text-white;
+    &__title {
+      font-size: 26px;
+      padding: 0 0 40px;
+    }
+    &__text {
+      font-size: 11px;
+      line-height: 20px;
+      font-weight: 600;
+    }
+  }
+
+  #myMap {
+    height: 500px;
+  }
+}
+
+
+// ---- ContactUs ----
+.contact-us-block {
+  background: url("../../assets/img/pattern.png") center no-repeat;
+  height: 600px;
+  background-size: cover;
+  padding: 100px 60px 0;
+  box-sizing: border-box;
+
+  &__wrapper {
+    @include grid();
+  }
+
+  &__title {
+    color: $color-text-white;
+    font-size: $title-font-size;
+    padding: 0 0 30px;
+  }
+
+  &__text {
+    color: #000000;
+    font-size: 18px;
+    padding: 75px 0 0 37px;
+    line-height: 35px;
+  }
+
+  &__wrap {
+    display: block;
+    height: 50px;
+    border-bottom: 1px solid #000000;
+    width: 540px;
+    cursor: default;
+  }
+
+  &__label {
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 50px;
+  }
+
+  &__input {
+    font-size: 18px;
+    background: transparent;
+    outline: none;
+    border: none;
+  }
+
+  &__checkbox {
+    display: block;
+    height: 55px;
+    line-height: 55px;
+    border-bottom: none !important;
+  }
+
+  &__btn {
+    color: $color-text-white;
+    font-size: 11px;
+    width: 280px;
+    height: 80px;
+    background: #262626;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 15px 0 0;
+    transition: ease-in-out 0.4s;
+    &:hover {
+      opacity: 0.87;
+    }
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #1bb563 inset;
+}
+
+.error {
+  color: red;
+}
+
+.active {
+  color:$color-text-white;
+  border-bottom: 1px solid $color-text-white;
+}
+
+.active > input:-webkit-autofill {
+  -webkit-text-fill-color: $color-text-white !important;
+}
