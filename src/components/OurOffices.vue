@@ -29,7 +29,7 @@
         </div>
         <div class="tab-panel" v-if="isActiveTab(2)">
           <p class="tab-panel__title">Global Message Services China LLC</p>
-          <p>
+          <p class="tab-panel__text">
             Guangzhou, Dongfeng W rd, 195<br>
             510000<br>
             China
